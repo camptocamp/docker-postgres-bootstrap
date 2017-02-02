@@ -1,0 +1,17 @@
+---
+version: '2'
+services:
+  postgres:
+    image: postgres:9.5
+    environment:
+      POSTGRES_PASSWORD: fooBar
+      POSTGRES_USER: postgres
+  postgres-execute:
+    build: .
+    environment:
+      PGPASSWORD: fooBar
+      POSTGRES_USER: postgres
+    links:
+      - postgres:postgres
+    volumes:
+      - $PWD/scripts:/scripts

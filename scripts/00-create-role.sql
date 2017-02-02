@@ -1,0 +1,1 @@
+CREATE ROLE foo WITH PASSWORD 'bar';
